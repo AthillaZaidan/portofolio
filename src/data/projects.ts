@@ -53,6 +53,7 @@ export const projects: Project[] = [
       "Digital library system with image search (PCA) and text recommendation (LSA). Go backend with React + Vite frontend, Docker deployment.",
     techStack: ["Go", "React", "TypeScript", "Tailwind", "Docker"],
     repoUrl: "https://github.com/AthillaZaidan/Mjolnir",
+    image: "/projects/mjolnir.png",
   },
   {
     id: "malam-keos",
@@ -62,6 +63,7 @@ export const projects: Project[] = [
       "Custom 32-bit x86 operating system from scratch. Features Unix-like shell, EXT2 filesystem, round-robin multitasking scheduler, VGA graphics, and Bad Apple ASCII player.",
     techStack: ["C", "Assembly", "Makefile", "QEMU"],
     repoUrl: "https://github.com/AthillaZaidan/malam-keOS-ini",
+    image: "/projects/malamkeosini.png",
   },
   {
     id: "proxivity",
