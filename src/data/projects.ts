@@ -20,7 +20,7 @@ export const projects: Project[] = [
     description:
       "NLP-based aspiration intelligence pipeline for policy prioritization. Fine-tuned IndoBERTweet for multi-task classification, clustering, and local LLM-based policy brief generation.",
     techStack: ["Python", "FastAPI", "PostgreSQL", "HuggingFace", "IndoBERTweet"],
-    metrics: "85.19% Macro F1 · 610+ Synthetic Samples",
+    metrics: "85.19% Macro F1 · 6 layer AI Pipeline",
     badge: "5th Place — Hackfest 2026",
     repoUrl: "https://github.com/AthillaZaidan/Vokara",
     image: "/projects/vokara.png",
