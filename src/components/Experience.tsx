@@ -17,7 +17,7 @@ export function Experience() {
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <SectionLabel text="EXPERIENCE" className="mb-4 block" />
+          {/* <SectionLabel text="EXPERIENCE" className="mb-4 block" /> */}
           <Heading as="h2" size="section">
             Where I&apos;ve shipped
           </Heading>
@@ -26,8 +26,8 @@ export function Experience() {
           </p>
         </motion.div>
 
-        <div className="relative">
-          <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-[rgba(255,255,255,0.1)] ml-3 lg:ml-3" />
+        <div className="relative ml-[13px]">
+          <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-[rgba(255,255,255,0.1)]" />
 
           <div className="space-y-12">
             {experienceEntries.map((entry, index) => (
@@ -40,7 +40,7 @@ export function Experience() {
                 className="relative pl-10 lg:pl-14"
               >
                 <div
-                  className={`absolute left-0 top-1 w-3 h-3 rounded-full border ${
+                  className={`absolute left-0 top-1 -translate-x-1/2 w-3 h-3 rounded-full border ${
                     entry.isCurrent
                       ? "bg-[#0099ff] border-[#0099ff]"
                       : "bg-[rgba(255,255,255,0.3)] border-[rgba(255,255,255,0.5)]"
@@ -74,12 +74,10 @@ export function Experience() {
                   {entry.highlights.map((highlight, i) => (
                     <li
                       key={i}
-                      className="text-[15px] font-normal text-[rgba(255,255,255,0.6)] leading-[1.6] pl-4 relative"
+                      className="text-[15px] font-normal text-[rgba(255,255,255,0.6)] leading-[1.6] flex"
                     >
-                      <span className="absolute left-0 top-[0.4em] text-[#0099ff]">
-                        —
-                      </span>
-                      {highlight}
+                      <span className="text-[#0099ff] mr-2 shrink-0">—</span>
+                      <span>{highlight}</span>
                     </li>
                   ))}
                 </ul>
@@ -106,7 +104,7 @@ export function Experience() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-12"
         >
-          <a href="/cv_otw_summer_intern.pdf" download>
+          <a href="/Athilla%20Zaidan%20Zidna%20Fann_CV.pdf" download>
             <Pill variant="frosted" size="md">View Full Resume</Pill>
           </a>
         </motion.div>
