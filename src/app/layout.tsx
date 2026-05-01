@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   verification: {
-    google: "google-site-verification-code",
+    google: "b5G8M90pMQqnltUcC4VfewtRsLH6oD8cZrvnxN-9q-Q",
   },
   category: "technology",
 };
