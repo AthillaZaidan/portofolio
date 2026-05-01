@@ -11,6 +11,7 @@ export const projects: Project[] = [
     metrics: "0.846 AUC-ROC · 100% Precision · 77.4% F1",
     badge: "4th Place — Harvard HSIL",
     repoUrl: "https://github.com/AthillaZaidan/Cognify",
+    image: "/projects/cognify.png",
   },
   {
     id: "vokara",
@@ -22,6 +23,7 @@ export const projects: Project[] = [
     metrics: "85.19% Macro F1 · 610+ Synthetic Samples",
     badge: "5th Place — Hackfest 2026",
     repoUrl: "https://github.com/AthillaZaidan/Vokara",
+    image: "/projects/vokara.png",
   },
   {
     id: "grandsummit",
@@ -31,6 +33,7 @@ export const projects: Project[] = [
       "Registration platform for 200+ users with dual-track BCC/MCC flows, Supabase Auth/Postgres, dual-storage upload pipeline, and Google Sheets API sync.",
     techStack: ["Next.js", "React", "TypeScript", "Tailwind", "Supabase"],
     repoUrl: "https://github.com/AthillaZaidan/Grandsummit",
+    image: "/projects/grandsummit.png",
   },
   {
     id: "findmi",
@@ -40,6 +43,7 @@ export const projects: Project[] = [
       "FindMi e-commerce platform (IDR 200M+ revenue) and AMI event platform (>10,000 users). Features Midtrans payments, QR ticketing, real-time scanners, and admin dashboards.",
     techStack: ["React", "Vite", "Hono", "Drizzle", "PostgreSQL", "Midtrans"],
     repoUrl: "https://github.com/AthillaZaidan/FindMi",
+    image: "/projects/findmi.png",
   },
   {
     id: "mjolnir",
