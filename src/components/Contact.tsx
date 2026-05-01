@@ -82,7 +82,7 @@ export function Contact() {
           </p>
         </motion.div>
 
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-[800px] mx-auto">
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-[800px] mx-auto items-stretch">
           {contactLinks.map((link, index) => {
             const Icon = link.icon;
             return (
@@ -95,13 +95,14 @@ export function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="flex"
               >
-                <DarkSurfaceCard className="p-8 text-center hover:-translate-y-1.5 transition-transform duration-200 cursor-pointer">
-                  <Icon size={28} className="mx-auto text-white mb-3" />
-                  <p className="text-[14px] font-medium text-[#a6a6a6]">
+                <DarkSurfaceCard className="flex flex-col items-center justify-center p-8 text-center hover:-translate-y-1.5 transition-transform duration-200 cursor-pointer w-full min-h-[180px]">
+                  <Icon size={28} className="mx-auto text-white mb-3 shrink-0" />
+                  <p className="text-[14px] font-medium text-[#a6a6a6] shrink-0">
                     {link.label}
                   </p>
-                  <p className="mt-1 text-[16px] font-normal text-white">
+                  <p className="mt-1 text-[16px] font-normal text-white break-all leading-tight">
                     {link.value}
                   </p>
                 </DarkSurfaceCard>
