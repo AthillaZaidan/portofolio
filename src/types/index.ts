@@ -10,9 +10,15 @@ export interface Project {
   image?: string;
 }
 
+export interface Skill {
+  name: string;
+  icon: string;
+  iconUrl?: string;
+}
+
 export interface SkillCluster {
   title: string;
-  skills: string[];
+  skills: Skill[];
 }
 
 export interface ExperienceEntry {

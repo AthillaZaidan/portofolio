@@ -17,7 +17,7 @@ export function Skills() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <SectionLabel text="TECH STACK" className="mb-4 block" />
+          {/* <SectionLabel text="TECH STACK" className="mb-4 block" /> */}
           <Heading as="h2" size="section" centered>
             Tools I wield
           </Heading>
@@ -26,7 +26,7 @@ export function Skills() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {skillClusters.map((cluster, index) => (
             <motion.div
               key={cluster.title}
@@ -35,18 +35,28 @@ export function Skills() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <DarkSurfaceCard className="p-8 h-full">
-                <h3 className="text-[22px] font-bold text-white tracking-[-0.8px] mb-6">
+              <DarkSurfaceCard className="p-6 h-full">
+                <h3 className="text-[18px] font-bold text-white tracking-[-0.5px] mb-5">
                   {cluster.title}
                 </h3>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-3">
                   {cluster.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3.5 py-1.5 rounded-full bg-[rgba(255,255,255,0.1)] text-white text-[13px] font-medium hover:bg-[rgba(255,255,255,0.15)] hover:scale-[1.02] transition-all duration-200 cursor-default"
+                    <div
+                      key={skill.name}
+                      className="flex items-center gap-2 px-3 py-1.5 rounded-md bg-[rgba(255,255,255,0.06)] hover:bg-[rgba(255,255,255,0.1)] transition-colors duration-200"
                     >
-                      {skill}
-                    </span>
+                      <img
+                        src={skill.iconUrl ?? `https://skillicons.dev/icons?i=${skill.icon}`}
+                        alt={skill.name}
+                        width={18}
+                        height={18}
+                        className="shrink-0"
+                        loading="lazy"
+                      />
+                      <span className="text-[13px] font-medium text-[rgba(255,255,255,0.8)]">
+                        {skill.name}
+                      </span>
+                    </div>
                   ))}
                 </div>
               </DarkSurfaceCard>
