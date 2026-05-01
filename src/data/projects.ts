@@ -32,7 +32,7 @@ export const projects: Project[] = [
     description:
       "Registration platform for 200+ users with dual-track BCC/MCC flows, Supabase Auth/Postgres, dual-storage upload pipeline, and Google Sheets API sync.",
     techStack: ["Next.js", "React", "TypeScript", "Tailwind", "Supabase"],
-    repoUrl: "https://github.com/AthillaZaidan/Grandsummit",
+    repoUrl: "https://github.com/sxc-15th-grandsummit/grandsummit-15th",
     image: "/projects/grandsummit.png",
   },
   {
