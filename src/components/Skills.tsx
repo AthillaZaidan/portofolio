@@ -1,40 +1,24 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { SectionLabel } from "./ui/SectionLabel";
+import { AnimatedSection, AnimatedItem } from "./AnimatedSection";
 import { Heading } from "./ui/Heading";
 import { DarkSurfaceCard } from "./ui/DarkSurfaceCard";
 import { skillClusters } from "@/data/skills";
 
 export function Skills() {
   return (
-    <section id="skills" className="bg-black py-20 lg:py-32">
+    <section id="skills" className="bg-black py-20 lg:py-32" aria-labelledby="skills-heading">
       <div className="max-w-[1200px] mx-auto px-6 sm:px-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          {/* <SectionLabel text="TECH STACK" className="mb-4 block" /> */}
-          <Heading as="h2" size="section" centered>
+        <AnimatedSection className="text-center mb-12">
+          <Heading as="h2" size="section" centered id="skills-heading">
             Tools I wield
           </Heading>
           <p className="mt-4 text-[18px] font-normal text-[#a6a6a6]">
             From model training to production deployment
           </p>
-        </motion.div>
+        </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {skillClusters.map((cluster, index) => (
-            <motion.div
-              key={cluster.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            >
+            <AnimatedItem key={cluster.title} delay={index * 0.1}>
               <DarkSurfaceCard className="p-6 h-full">
                 <h3 className="text-[18px] font-bold text-white tracking-[-0.5px] mb-5">
                   {cluster.title}
@@ -60,7 +44,7 @@ export function Skills() {
                   ))}
                 </div>
               </DarkSurfaceCard>
-            </motion.div>
+            </AnimatedItem>
           ))}
         </div>
       </div>

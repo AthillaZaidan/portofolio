@@ -6,6 +6,7 @@ interface HeadingProps {
   size?: "hero" | "section" | "feature";
   className?: string;
   centered?: boolean;
+  id?: string;
 }
 
 export function Heading({
@@ -14,6 +15,7 @@ export function Heading({
   size = "section",
   className,
   centered = false,
+  id,
 }: HeadingProps) {
   const sizes = {
     hero: "text-[40px] sm:text-[62px] lg:text-[85px] leading-[0.95] tracking-[-0.04em]",
@@ -25,6 +27,7 @@ export function Heading({
 
   return (
     <Tag
+      id={id}
       className={cn(
         "font-medium text-white",
         sizes[size],

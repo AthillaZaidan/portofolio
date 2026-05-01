@@ -1,15 +1,11 @@
-"use client";
-
-import dynamic from "next/dynamic";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
-
-const About = dynamic(() => import("@/components/About").then((m) => ({ default: m.About })), { ssr: false });
-const Skills = dynamic(() => import("@/components/Skills").then((m) => ({ default: m.Skills })), { ssr: false });
-const ProjectCarousel = dynamic(() => import("@/components/ProjectCarousel").then((m) => ({ default: m.ProjectCarousel })), { ssr: false });
-const Experience = dynamic(() => import("@/components/Experience").then((m) => ({ default: m.Experience })), { ssr: false });
-const Contact = dynamic(() => import("@/components/Contact").then((m) => ({ default: m.Contact })), { ssr: false });
-const Footer = dynamic(() => import("@/components/Footer").then((m) => ({ default: m.Footer })), { ssr: false });
+import { About } from "@/components/About";
+import { Skills } from "@/components/Skills";
+import { ProjectCarousel } from "@/components/ProjectCarousel";
+import { Experience } from "@/components/Experience";
+import { Contact } from "@/components/Contact";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
