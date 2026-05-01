@@ -11,14 +11,14 @@ export function About() {
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-12 lg:gap-16 items-center">
           <div>
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
               <SectionLabel text="ABOUT" className="mb-4 block" />
-            </motion.div>
+            </motion.div> */}
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -35,7 +35,7 @@ export function About() {
               {[
                 "I'm Athilla Zaidan, a Computer Science sophomore at Institut Teknologi Bandung with a 3.94/4.00 GPA. I operate at the intersection of artificial intelligence and fullstack engineering — building systems that don't just predict, but perform.",
                 "My work spans from anomaly detection frameworks achieving 0.846 AUC-ROC, to NLP pipelines processing thousands of citizen aspirations, to production fullstack platforms serving 10,000+ users. I don't silo myself into 'AI' or 'web dev' — I build end-to-end.",
-                "When I'm not training models or architecting backends, you'll find me building operating systems from scratch, competing in algorithmic battles, or shipping products that generate real revenue.",
+                "Beyond the code, I actively contribute to various organizations and communities — from student-led tech initiatives to national-scale events. I believe engineering is most powerful when it creates tangible, positive impact for society.",
               ].map((text, i) => (
                 <motion.p
                   key={i}
@@ -57,7 +57,7 @@ export function About() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="mt-8"
             >
-              <a href="/cv_otw_summer_intern.pdf" download>
+              <a href="/Athilla%20Zaidan%20Zidna%20Fann_CV.pdf" download>
                 <Pill variant="solid" size="md">Download CV</Pill>
               </a>
             </motion.div>
