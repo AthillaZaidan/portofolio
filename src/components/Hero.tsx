@@ -63,7 +63,7 @@ export function Hero() {
           className="mt-4"
         >
           <p className="text-[18px] sm:text-[20px] font-normal text-white tracking-[-0.8px]" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.8)" }}>
-            AI Engineer & Fullstack Developer
+            Software and AI Engineer
           </p>
         </motion.div>
 
