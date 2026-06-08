@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL("https://athilla.tech"),
   openGraph: {
-    title: "Athilla Zaidan — AI Engineer & Fullstack Developer",
+    title: "Athilla Zaidan — Software and AI Engineer",
     description:
       "Portfolio of Athilla Zaidan, AI Engineer and Fullstack Developer. Building intelligent systems from models to deployment.",
     url: "https://athilla.tech",
