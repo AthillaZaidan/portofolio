@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Athilla Zaidan — AI Engineer & Fullstack Developer",
+    default: "Athilla Zaidan — Software and AI Engineer",
     template: "%s | Athilla Zaidan",
   },
   description:
