@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { inter, azeretMono } from "@/lib/fonts";
+import { SmoothScrollProvider } from "@/components/SmoothScrollProvider";
+import { GrainOverlay } from "@/components/GrainOverlay";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -152,7 +154,10 @@ export default function RootLayout({
             }),
           }}
         />
-        {children}
+        <SmoothScrollProvider>
+          {children}
+        </SmoothScrollProvider>
+        <GrainOverlay />
       </body>
     </html>
   );
