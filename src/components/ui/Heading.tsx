@@ -1,12 +1,16 @@
+import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { LineReveal } from "@/components/LineReveal";
 
 interface HeadingProps {
-  children: React.ReactNode;
+  children: ReactNode;
   as?: "h1" | "h2" | "h3";
   size?: "hero" | "section" | "feature";
   className?: string;
   centered?: boolean;
   id?: string;
+  reveal?: boolean;
+  revealDelay?: number;
 }
 
 export function Heading({
@@ -16,6 +20,8 @@ export function Heading({
   className,
   centered = false,
   id,
+  reveal = false,
+  revealDelay = 0,
 }: HeadingProps) {
   const sizes = {
     hero: "text-[40px] sm:text-[62px] lg:text-[85px] leading-[0.95] tracking-[-0.04em]",
@@ -25,7 +31,7 @@ export function Heading({
       "text-[22px] sm:text-[24px] lg:text-[32px] leading-[1.13] tracking-[-0.02em]",
   };
 
-  return (
+  const content = (
     <Tag
       id={id}
       className={cn(
@@ -38,4 +44,14 @@ export function Heading({
       {children}
     </Tag>
   );
+
+  if (reveal) {
+    return (
+      <LineReveal delay={revealDelay} className={centered ? "text-center" : undefined}>
+        {content}
+      </LineReveal>
+    );
+  }
+
+  return content;
 }
