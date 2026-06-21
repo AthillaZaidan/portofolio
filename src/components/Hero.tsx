@@ -3,10 +3,16 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import { SoftAurora } from "./SoftAurora";
+import { FluidAurora } from "./FluidAurora";
+import { TextReveal } from "./TextReveal";
+import { LineReveal } from "./LineReveal";
+import { useMagnetic } from "@/hooks/useMagnetic";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 export function Hero() {
   const [showScrollIndicator, setShowScrollIndicator] = useState(true);
+  const reducedMotion = useReducedMotion();
+  const { ref: magneticRef, offset, handlers } = useMagnetic(0.25, 120);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,50 +33,37 @@ export function Hero() {
 
   return (
     <section className="relative h-screen w-full overflow-hidden bg-black">
-      <SoftAurora
-        speed={0.5}
-        scale={1.5}
-        brightness={0.8}
+      <FluidAurora
+        speed={0.4}
+        brightness={0.9}
         color1="#ffffff"
         color2="#0099ff"
-        noiseFrequency={2.5}
-        noiseAmplitude={1.0}
-        bandHeight={0.5}
-        bandSpread={1.0}
-        octaveDecay={0.1}
-        layerOffset={0}
-        colorSpeed={1.0}
-        enableMouseInteraction={true}
-        mouseInfluence={0.25}
+        mouseInfluence={0.15}
+        enableMouseInteraction
         className="absolute inset-0"
       />
 
       <div className="relative z-10 h-full flex flex-col justify-center px-6 sm:px-12 lg:px-24 max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
-          <h1 className="text-[40px] sm:text-[62px] lg:text-[85px] font-medium text-white leading-[0.95] tracking-[-0.04em]" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.8)" }}>
-            Athilla Zaidan
-          </h1>
-        </motion.div>
+        <div className="overflow-hidden">
+          <TextReveal
+            text="Athilla Zaidan"
+            className="text-[40px] sm:text-[62px] lg:text-[85px] font-medium text-white leading-[0.95] tracking-[-0.04em]"
+            delay={0.3}
+            stagger={0.04}
+            showCaret
+          />
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-4"
-        >
+        <LineReveal delay={0.9} className="mt-4">
           <p className="text-[18px] sm:text-[20px] font-normal text-white tracking-[-0.8px]" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.8)" }}>
             Software and AI Engineer
           </p>
-        </motion.div>
+        </LineReveal>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
+          initial={reducedMotion ? { opacity: 1 } : { opacity: 0, filter: "blur(8px)" }}
+          animate={{ opacity: 1, filter: "blur(0px)" }}
+          transition={{ duration: 0.8, delay: 1.2 }}
           className="mt-2"
         >
           <p className="text-[15px] font-normal text-white" style={{ textShadow: "0 2px 20px rgba(0,0,0,0.8)" }}>
@@ -79,13 +72,18 @@ export function Hero() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={reducedMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.9 }}
+          transition={{ duration: 0.6, delay: 1.5 }}
           className="mt-8"
         >
           <button
+            ref={magneticRef as React.RefObject<HTMLButtonElement>}
             onClick={scrollToProjects}
+            {...handlers}
+            style={{
+              transform: reducedMotion ? undefined : `translate(${offset.x}px, ${offset.y}px)`,
+            }}
             className="px-6 py-3 rounded-full bg-[rgba(255,255,255,0.1)] text-white text-sm font-medium hover:bg-[rgba(255,255,255,0.15)] hover:scale-[1.03] transition-all duration-200 cursor-pointer"
           >
             View My Work
