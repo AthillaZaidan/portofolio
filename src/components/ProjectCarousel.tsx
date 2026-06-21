@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import {
   ArrowUpRight,
   ChevronLeft,
@@ -11,7 +11,7 @@ import {
 import { Heading } from "./ui/Heading";
 import { projects } from "@/data/projects";
 
-function GithubIcon({ size = 16 }: { size?: number }) {
+function GithubIcon({ size = 16 }: { readonly size?: number }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -29,6 +29,7 @@ function GithubIcon({ size = 16 }: { size?: number }) {
 export function ProjectCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
   const activeProject = projects[activeIndex];
   const prefersReducedMotion = useReducedMotion();
 
@@ -51,9 +52,11 @@ export function ProjectCarousel() {
   const goNext = () => setActiveIndex((i) => (i + 1) % projects.length);
   const goPrev = () =>
     setActiveIndex((i) => (i - 1 + projects.length) % projects.length);
-  const goTo = (i: number) => setActiveIndex(Math.max(0, Math.min(i, projects.length - 1)));
+  const goTo = (i: number) =>
+    setActiveIndex(Math.max(0, Math.min(i, projects.length - 1)));
 
-  const handleTouchStart = (e: React.TouchEvent) => setTouchStart(e.targetTouches[0].clientX);
+  const handleTouchStart = (e: React.TouchEvent) =>
+    setTouchStart(e.targetTouches[0].clientX);
   const handleTouchEnd = (e: React.TouchEvent) => {
     const diff = touchStart - e.changedTouches[0].clientX;
     if (Math.abs(diff) > 50) {
@@ -62,24 +65,36 @@ export function ProjectCarousel() {
     }
   };
 
+  const imageVariants = prefersReducedMotion
+    ? {
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
+        exit: { opacity: 0 },
+      }
+    : {
+        initial: { opacity: 0, scale: 1.02, filter: "brightness(0.8)" },
+        animate: { opacity: 1, scale: 1, filter: "brightness(1)" },
+        exit: { opacity: 0, scale: 0.98, filter: "brightness(0.8)" },
+      };
+
   return (
     <section id="projects" className="bg-black py-20 lg:py-32">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-12">
-        <motion.div
+        <div className="overflow-hidden mb-10 lg:mb-14">
+          <Heading as="h2" size="hero" reveal>
+            Things I&apos;ve built
+          </Heading>
+        </div>
+        <motion.p
+          className="mb-10 lg:mb-14 max-w-[62ch] text-[17px] sm:text-[18px] font-normal leading-[1.55] text-[#a6a6a6]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-10 lg:mb-14"
+          transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <Heading as="h2" size="hero">
-            Things I&apos;ve built
-          </Heading>
-          <p className="mt-4 max-w-[62ch] text-[17px] sm:text-[18px] font-normal leading-[1.55] text-[#a6a6a6]">
-            A focused index of AI systems, fullstack platforms, infrastructure,
-            and competition work. Pick a project to inspect the proof.
-          </p>
-        </motion.div>
+          A focused index of AI systems, fullstack platforms, infrastructure,
+          and competition work. Pick a project to inspect the proof.
+        </motion.p>
 
         <div
           ref={stageRef}
@@ -109,13 +124,14 @@ export function ProjectCarousel() {
                   }`}
                 >
                   <div className="flex items-center justify-between gap-3">
-                    <span
+                    <motion.span
                       className={`font-mono text-[11px] ${
                         selected ? "text-[#0099ff]" : "text-white/40"
                       }`}
+                      whileHover={prefersReducedMotion ? undefined : { scale: 1.3 }}
                     >
                       {String(index + 1).padStart(2, "0")}
-                    </span>
+                    </motion.span>
                     {project.badge && (
                       <span className="max-w-[130px] truncate rounded-full bg-[rgba(0,153,255,0.1)] px-2 py-0.5 text-[10px] font-medium text-[#0099ff]">
                         {project.badge}
@@ -139,40 +155,59 @@ export function ProjectCarousel() {
 
           <motion.article
             id="project-stage"
-            key={activeProject.id}
             role="tabpanel"
-            initial={
-              prefersReducedMotion
-                ? { opacity: 0 }
-                : { opacity: 0, y: 18, filter: "blur(10px)" }
-            }
-            animate={
-              prefersReducedMotion
-                ? { opacity: 1 }
-                : { opacity: 1, y: 0, filter: "blur(0px)" }
-            }
-            transition={{
-              duration: prefersReducedMotion ? 0.12 : 0.45,
-              ease: [0.22, 1, 0.36, 1],
-            }}
             className="order-1 overflow-hidden rounded-2xl bg-[#090909] shadow-[rgba(0,153,255,0.24)_0px_0px_0px_1px] lg:order-2 lg:h-[var(--project-stage-height)]"
           >
             <div className="flex h-full flex-col">
-              <div className="relative aspect-[21/9] shrink-0 overflow-hidden bg-black max-lg:aspect-video">
-                {activeProject.image ? (
-                  <img
-                    src={activeProject.image}
-                    alt={`${activeProject.title} project screenshot`}
-                    className="h-full w-full object-cover"
-                  />
-                ) : (
-                  <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_50%_20%,rgba(0,153,255,0.18),transparent_34%),#050505]">
-                    <div className="flex h-20 w-20 items-center justify-center rounded-2xl shadow-[rgba(0,153,255,0.32)_0px_0px_0px_1px]">
-                      <ImageIcon className="text-[#0099ff]" size={28} />
-                    </div>
-                  </div>
-                )}
-                <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#090909] to-transparent" />
+              <div
+                className="relative aspect-[21/9] shrink-0 overflow-hidden bg-black max-lg:aspect-video group"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
+                <AnimatePresence mode="wait">
+                  {activeProject.image ? (
+                    <motion.img
+                      key={activeProject.id}
+                      src={activeProject.image}
+                      alt={`${activeProject.title} project screenshot`}
+                      className="h-full w-full object-cover"
+                      variants={imageVariants}
+                      initial="initial"
+                      animate="animate"
+                      exit="exit"
+                      transition={{ duration: prefersReducedMotion ? 0.12 : 0.45, ease: [0.22, 1, 0.36, 1] }}
+                      style={{
+                        transform: isHovered && !prefersReducedMotion ? "scale(1.03)" : "scale(1)",
+                        transition: "transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)",
+                      }}
+                    />
+                  ) : (
+                    <motion.div
+                      key={`placeholder-${activeProject.id}`}
+                      className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_50%_20%,rgba(0,153,255,0.18),transparent_34%),#050505]"
+                      variants={imageVariants}
+                      initial="initial"
+                      animate="animate"
+                      exit="exit"
+                      transition={{ duration: prefersReducedMotion ? 0.12 : 0.45, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                      <div className="flex h-20 w-20 items-center justify-center rounded-2xl shadow-[rgba(0,153,255,0.32)_0px_0px_0px_1px]">
+                        <ImageIcon className="text-[#0099ff]" size={28} />
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+                <motion.div
+                  className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#090909] to-transparent flex items-end justify-center pb-3"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: isHovered && !prefersReducedMotion ? 1 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <span className="text-[12px] font-medium text-white/70 flex items-center gap-1">
+                    View Source <ArrowUpRight size={12} />
+                  </span>
+                </motion.div>
+                <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#090909] to-transparent pointer-events-none" />
               </div>
 
               <div className="flex min-h-0 flex-1 flex-col justify-between p-5 sm:p-7 lg:p-7">
