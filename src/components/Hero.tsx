@@ -65,7 +65,6 @@ export function Hero() {
             className="text-[40px] sm:text-[62px] lg:text-[85px] font-medium text-white leading-[0.95] tracking-[-0.04em]"
             delay={0.3}
             stagger={0.04}
-            showCaret
           />
         </div>
 
