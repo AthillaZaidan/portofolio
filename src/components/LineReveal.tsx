@@ -1,7 +1,7 @@
 "use client";
 
-import type { ReactNode } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { useRef, type ReactNode } from "react";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 
 interface LineRevealProps {
   readonly children: ReactNode;
@@ -15,17 +15,18 @@ export function LineReveal({
   delay = 0,
 }: LineRevealProps) {
   const reducedMotion = useReducedMotion();
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
 
   if (reducedMotion) {
     return <div className={className}>{children}</div>;
   }
 
   return (
-    <div className={`overflow-hidden ${className}`}>
+    <div ref={ref} className={`overflow-hidden ${className}`}>
       <motion.div
         initial={{ y: "100%" }}
-        whileInView={{ y: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
+        animate={{ y: isInView ? 0 : "100%" }}
         transition={{
           duration: 0.7,
           delay,
