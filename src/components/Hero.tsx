@@ -38,8 +38,7 @@ export function Hero() {
         brightness={0.7}
         color1="#ffffff"
         color2="#0099ff"
-        mouseInfluence={0.15}
-        enableMouseInteraction
+        enableMouseInteraction={false}
         className="absolute inset-0"
       />
 
@@ -48,6 +47,14 @@ export function Hero() {
         style={{
           background:
             "radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0.4) 0%, transparent 60%), radial-gradient(ellipse at 70% 50%, rgba(0,0,0,0.3) 0%, transparent 50%)",
+        }}
+      />
+
+      <div
+        className="absolute inset-x-0 bottom-0 h-[35vh] z-[1] pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 50%, #000000 100%)",
         }}
       />
 
