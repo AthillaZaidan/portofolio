@@ -35,12 +35,20 @@ export function Hero() {
     <section className="relative h-screen w-full overflow-hidden bg-black">
       <FluidAurora
         speed={0.4}
-        brightness={0.9}
+        brightness={0.7}
         color1="#ffffff"
         color2="#0099ff"
         mouseInfluence={0.15}
         enableMouseInteraction
         className="absolute inset-0"
+      />
+
+      <div
+        className="absolute inset-0 z-[1] pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse at 30% 50%, rgba(0,0,0,0.4) 0%, transparent 60%), radial-gradient(ellipse at 70% 50%, rgba(0,0,0,0.3) 0%, transparent 50%)",
+        }}
       />
 
       <div className="relative z-10 h-full flex flex-col justify-center px-6 sm:px-12 lg:px-24 max-w-7xl mx-auto">

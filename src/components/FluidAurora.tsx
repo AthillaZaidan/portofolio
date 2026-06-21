@@ -36,10 +36,10 @@ uniform float uMouseInfluence;
 uniform bool uEnableMouse;
 
 vec3 blobCenter(float i, float t) {
-  float angle = t * (0.2 + i * 0.1) + i * 2.4;
-  float radius = 0.25 + 0.1 * sin(t * 0.3 + i);
+  float angle = t * (0.15 + i * 0.08) + i * 2.4;
+  float radius = 0.35 + 0.12 * sin(t * 0.2 + i * 1.3);
   float x = 0.5 + radius * cos(angle);
-  float y = 0.5 + radius * sin(angle) * 0.6;
+  float y = 0.42 + radius * sin(angle) * 0.55;
   return vec3(x, y, 0.0);
 }
 
@@ -50,7 +50,7 @@ float smoothMin(float a, float b, float k) {
 
 void main() {
   vec2 uv = gl_FragCoord.xy / uResolution.xy;
-  float t = uTime * uSpeed * 0.15;
+  float t = uTime * uSpeed * 0.12;
 
   vec2 mouseOffset = vec2(0.0);
   if (uEnableMouse) {
@@ -58,18 +58,18 @@ void main() {
   }
 
   float field = 1000.0;
-  for (float i = 0.0; i < 4.0; i += 1.0) {
+  for (float i = 0.0; i < 3.0; i += 1.0) {
     vec3 center = blobCenter(i, t);
-    center.xy += mouseOffset * (0.5 + i * 0.15);
+    center.xy += mouseOffset * (0.3 + i * 0.1);
     float d = length(uv - center.xy);
-    field = smoothMin(field, d, 0.45);
+    field = smoothMin(field, d, 0.35);
   }
 
-  float intensity = smoothstep(0.55, 0.0, field) * uBrightness;
-  vec3 color = mix(uColor1, uColor2, intensity * 0.7);
+  float intensity = smoothstep(0.45, 0.0, field) * uBrightness;
+  vec3 color = mix(uColor1 * 0.15, uColor2 * 0.35, intensity * 0.8);
 
-  float alpha = clamp(intensity * 1.2, 0.0, 0.75);
-  gl_FragColor = vec4(color * intensity, alpha);
+  float alpha = clamp(intensity * 0.55, 0.0, 0.35);
+  gl_FragColor = vec4(color, alpha);
 }
 `;
 
