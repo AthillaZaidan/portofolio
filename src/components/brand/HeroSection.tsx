@@ -15,12 +15,10 @@ export function HeroSection() {
       </div>
       <h1
         className="mt-16 text-[18vw] font-semibold uppercase leading-[.84] tracking-[-0.075em] text-[#111] md:mt-0 md:text-[12.2vw]"
-        aria-label="Systems that learn. Interfaces that prove it."
+        aria-label="Engineering Intelligence"
       >
-        <TitleLine>Systems</TitleLine>
-        <TitleLine className="text-right md:pr-[5vw]">that learn.</TitleLine>
-        <TitleLine>Interfaces</TitleLine>
-        <TitleLine className="text-right">that prove it.</TitleLine>
+        <TitleLine>Engineering</TitleLine>
+        <TitleLine className="text-right">Intelligence</TitleLine>
       </h1>
     </section>
   );
