@@ -46,6 +46,15 @@
   animation-play-state: paused;
 }
 
+@media (max-width: 767px) and (orientation: landscape) {
+  .hero-title {
+    font-size: clamp(1.9rem, 8vmin, 3rem);
+    letter-spacing: -0.025em;
+    line-height: 0.94;
+    top: 58svh;
+  }
+}
+
 .grain-overlay {
   position: fixed;
   inset: 0;
