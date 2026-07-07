@@ -35,7 +35,7 @@ export const principles = [
   "A portfolio should show evidence before adjectives.",
 ];
 
-export const featuredProjects = projects.slice(0, 6);
+export const featuredProjects = projects;
 
 export const featuredExperience = experienceEntries;
 
