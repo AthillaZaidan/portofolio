@@ -22,7 +22,7 @@ export function ContactSection() {
         <ContactLink href="https://github.com/athillazaidan" iconUrl="https://cdn.simpleicons.org/github/171717">
           GitHub
         </ContactLink>
-        <ContactLink href="https://linkedin.com/in/athillazaidan" iconUrl="https://cdn.simpleicons.org/linkedin/0A66C2">
+        <ContactLink href="https://linkedin.com/in/athillazaidan" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg">
           LinkedIn
         </ContactLink>
         <a className="group relative flex items-center justify-center gap-3 overflow-hidden rounded-full bg-[#171717] px-6 py-5 text-center text-lg font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,.18),0_18px_40px_rgba(0,0,0,.16)] transition duration-300 hover:-translate-y-1 hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#171717]" href="/CV%20Athilla%20Zaidan%20Zidna%20Fann.pdf" download>
