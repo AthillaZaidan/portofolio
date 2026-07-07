@@ -55,7 +55,7 @@ export function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <a href="/Athilla%20Zaidan%20Zidna%20Fann_CV.pdf" download>
+              <a href="/CV%20Athilla%20Zaidan%20Zidna%20Fann.pdf" download>
                 <Pill variant="solid" size="md">Download CV</Pill>
               </a>
             </motion.div>

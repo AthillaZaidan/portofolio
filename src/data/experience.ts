@@ -2,6 +2,18 @@ import { ExperienceEntry } from "@/types";
 
 export const experienceEntries: ExperienceEntry[] = [
   {
+    role: "AI Engineer Intern",
+    company: "GDP Labs",
+    companyUrl: undefined,
+    dateRange: "Jun. 2026 – Present",
+    isCurrent: true,
+    highlights: [
+      "Contributing to the Model Accuracy Benchmark team at GLAIR, supporting an LLM benchmarking platform for proprietary and open-source AI models",
+      "Working on evaluation workflows across model accuracy, latency, and cost metrics for scalable AI product engineering",
+    ],
+    techStack: ["LLM Evaluation", "Benchmarking", "Python", "Model Accuracy"],
+  },
+  {
     role: "Fullstack Developer",
     company: "IT Aku Masuk ITB 2026",
     companyUrl: undefined,
