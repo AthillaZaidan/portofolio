@@ -22,7 +22,7 @@ export function HeroSection() {
               introReady ? "translate-y-0" : "translate-y-[115%]"
             }`}
           >
-            Athilla Zaidan Zidna Fann
+            Athilla Zaidan
           </p>
         </div>
         <div className="col-span-12 max-w-[34rem] overflow-hidden py-2 md:col-span-5 md:col-start-6">

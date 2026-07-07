@@ -21,32 +21,6 @@
   }
 }
 
-@keyframes titleUp {
-  from {
-    transform: translate3d(0, 108%, 0);
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes titleMaskUp {
-  from {
-    transform: translate3d(0, 108%, 0);
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-.mask-reveal {
-  animation: titleMaskUp 1s cubic-bezier(.87, 0, .13, 1) both;
-}
-
-.mask-reveal-slow {
-  animation: titleMaskUp 1.25s cubic-bezier(.87, 0, .13, 1) both;
-}
-
 @keyframes grain {
   0%, 100% { transform: translate(0, 0); }
   20% { transform: translate(-12%, 4%); }

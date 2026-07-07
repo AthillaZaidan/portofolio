@@ -1,3 +1,4 @@
+import { BrandReveal } from "./BrandReveal";
 import { featuredExperience } from "./content";
 import { SectionHead } from "./SectionHead";
 
@@ -7,24 +8,22 @@ export function ExperienceSection() {
       <SectionHead title="Experience" caption="Operating history" />
       <div className="space-y-3">
         {featuredExperience.map((entry, index) => (
-          <article
-            className="grid animate-[titleUp_1s_cubic-bezier(.87,0,.13,1)] grid-cols-12 gap-x-3 gap-y-6 bg-[#ebe6dc] p-5 md:p-7"
-            style={{ animationDelay: `${index * 90}ms` }}
-            key={`${entry.company}-${entry.role}`}
-          >
-            <div className="col-span-12 md:col-span-4">
-              <span className="font-mono text-xs text-[#174fff]">{entry.dateRange}</span>
-              <h3 className="mt-4 text-3xl font-semibold leading-none tracking-[-0.06em] md:text-5xl">{entry.role}</h3>
-              <p className="mt-3 text-lg text-[#4d4a43]">{entry.company}</p>
-            </div>
-            <ul className="col-span-12 space-y-4 text-base leading-[1.7] text-[#3f3d38] md:col-span-7 md:col-start-6 md:text-lg">
-              {entry.highlights.slice(0, 2).map((highlight) => (
-                <li className="border-t border-[#d4cdc0] pt-4" key={highlight}>
-                  {highlight}
-                </li>
-              ))}
-            </ul>
-          </article>
+          <BrandReveal delay={index * 0.09} key={`${entry.company}-${entry.role}`}>
+            <article className="grid grid-cols-12 gap-x-3 gap-y-6 bg-[#ebe6dc] p-5 md:p-7">
+              <div className="col-span-12 md:col-span-4">
+                <span className="font-mono text-xs text-[#174fff]">{entry.dateRange}</span>
+                <h3 className="mt-4 text-3xl font-semibold leading-none tracking-[-0.06em] md:text-5xl">{entry.role}</h3>
+                <p className="mt-3 text-lg text-[#4d4a43]">{entry.company}</p>
+              </div>
+              <ul className="col-span-12 space-y-4 text-base leading-[1.7] text-[#3f3d38] md:col-span-7 md:col-start-6 md:text-lg">
+                {entry.highlights.slice(0, 2).map((highlight) => (
+                  <li className="border-t border-[#d4cdc0] pt-4" key={highlight}>
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </BrandReveal>
         ))}
       </div>
     </section>
