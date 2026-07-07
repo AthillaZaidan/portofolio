@@ -21,7 +21,7 @@ export function WorksSection() {
   return (
     <section id="works" className="bg-[#f7f6f2] px-5 py-20 text-[#171717] md:px-[2.4vw] md:py-[9vw]">
       <SectionHead title="Works" caption="Selected projects" />
-      <p className="text-sm uppercase tracking-[0.16em] text-[#6b665d]">Hover for details</p>
+      <p className="hidden text-sm uppercase tracking-[0.16em] text-[#6b665d] md:block">Hover for details</p>
       <div className="mt-12 columns-1 gap-5 sm:columns-2 xl:columns-3">
         {featuredProjects.map((project, index) => (
           <BrandReveal className="mb-5 break-inside-avoid" delay={Math.min(index * 0.06, 0.3)} key={project.id}>
@@ -46,7 +46,7 @@ function WorkCard({ project }: { project: Project }) {
       <div className="relative overflow-hidden">
         {project.image && imageSize ? (
           <Image
-            className="h-auto w-full transition duration-700 group-hover:scale-[1.04] group-focus-visible:scale-[1.04]"
+            className="h-auto w-full transition duration-700 md:group-hover:scale-[1.04] md:group-focus-visible:scale-[1.04]"
             src={project.image}
             alt={`${project.title} project screenshot`}
             width={imageSize.width}
@@ -58,9 +58,9 @@ function WorkCard({ project }: { project: Project }) {
             {project.title.slice(0, 2)}
           </span>
         )}
-        <div className="absolute inset-0 flex translate-y-4 flex-col justify-end bg-[#f7f6f2]/88 p-5 opacity-0 transition duration-500 group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
+        <div className="relative flex flex-col justify-end bg-[#f7f6f2] p-5 transition duration-500 md:absolute md:inset-0 md:translate-y-4 md:bg-[#f7f6f2]/88 md:opacity-0 md:group-hover:translate-y-0 md:group-hover:opacity-100 md:group-focus-visible:translate-y-0 md:group-focus-visible:opacity-100">
           <span className="text-sm uppercase tracking-[0.16em] text-[#6b665d]">{project.role}</span>
-          <h3 className="mt-2 text-4xl font-semibold leading-none tracking-[-0.05em]">{project.title}</h3>
+          <h3 className="mt-2 text-[clamp(2rem,9vw,2.5rem)] font-semibold leading-none tracking-[-0.04em] md:text-4xl md:tracking-[-0.05em]">{project.title}</h3>
           <p className="mt-4 max-w-[34rem] text-sm leading-[1.65] text-[#38352f]">{project.description}</p>
           <ul className="mt-5 flex flex-wrap gap-2">
             {project.techStack.slice(0, 4).map((tech) => (

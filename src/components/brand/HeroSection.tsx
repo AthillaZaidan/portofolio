@@ -13,7 +13,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden px-5 pb-16 pt-28 md:px-[2.4vw] md:pb-[4.5vw] md:pt-[9vw]"
+      className="relative min-h-[100svh] overflow-hidden px-5 pb-16 pt-28 md:min-h-screen md:px-[2.4vw] md:pb-[4.5vw] md:pt-[9vw]"
     >
       <div className="grid grid-cols-12 gap-x-3 gap-y-8">
         <div className="col-span-12 max-w-[34rem] overflow-hidden py-2 md:col-span-10 md:col-start-1">
@@ -37,17 +37,26 @@ export function HeroSection() {
         </div>
       </div>
       <h1
-        className="absolute bottom-12 left-5 right-5 text-[11.8vw] font-semibold uppercase leading-[.82] tracking-[-0.055em] text-[#111] md:bottom-[3vw] md:left-[2.4vw] md:right-[2.4vw] md:text-[10vw] md:tracking-[-0.075em]"
+        className="absolute left-3 right-3 top-[60svh] -translate-y-1/2 text-left text-[clamp(3.4rem,14.2vw,5.9rem)] font-semibold uppercase leading-[.76] tracking-[-0.065em] text-[#111] md:bottom-[3vw] md:left-[2.4vw] md:right-[2.4vw] md:top-auto md:translate-y-0 md:text-[10vw] md:leading-[.82] md:tracking-[-0.075em]"
         aria-label="Engineering Intelligence"
       >
         <TitleLine shown={introReady}>Engineering</TitleLine>
+        <span className="mx-auto my-1 block h-px w-[72%] origin-center bg-[#174fff] md:hidden" aria-hidden="true" />
         <TitleLine className="text-right" shown={introReady}>Intelligence</TitleLine>
       </h1>
     </section>
   );
 }
 
-function TitleLine({ children, className = "", shown }: { children: React.ReactNode; className?: string; shown: boolean }) {
+function TitleLine({
+  children,
+  className = "",
+  shown,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  shown: boolean;
+}) {
   return (
     <span className={`block overflow-hidden ${className}`}>
       <b

@@ -4,12 +4,12 @@ export function SectionHead({ title, caption }: { title: string; caption: string
   return (
     <header className="mb-12 md:mb-[5vw]">
       <BrandReveal>
-        <p className="mb-3 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] text-current/55 before:h-px before:w-8 before:bg-current/35">
+        <p className="mb-3 flex items-center gap-3 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-current/55 before:h-px before:w-6 before:bg-current/35 sm:text-xs sm:tracking-[0.18em] sm:before:w-8">
           {caption}
         </p>
       </BrandReveal>
       <BrandReveal slow>
-        <h2 className="text-[18vw] font-semibold uppercase leading-[.86] tracking-[-0.08em] md:text-[10.5vw]">
+        <h2 className="max-w-full text-[clamp(2.85rem,12vw,4.35rem)] font-semibold uppercase leading-[.9] tracking-[-0.035em] text-balance md:text-[10.5vw] md:leading-[.86] md:tracking-[-0.08em]">
           {title}
         </h2>
       </BrandReveal>
