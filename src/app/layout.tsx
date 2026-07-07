@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { inter, azeretMono } from "@/lib/fonts";
+import { inter, azeretMono, bodoniModa } from "@/lib/fonts";
 import { SmoothScrollProvider } from "@/components/SmoothScrollProvider";
 import { GrainOverlay } from "@/components/GrainOverlay";
 import "./globals.css";
@@ -85,7 +85,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${azeretMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${azeretMono.variable} ${bodoniModa.variable}`}>
       <head>
         <link rel="preconnect" href="https://skillicons.dev" />
         <link rel="preconnect" href="https://cdn.jsdelivr.net" />
