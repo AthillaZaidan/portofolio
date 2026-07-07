@@ -9,7 +9,7 @@ export function WorksSection() {
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {featuredProjects.map((project, index) => (
           <a
-            className="group animate-[rise_.9s_cubic-bezier(.16,1,.3,1)_both] bg-[#202020] text-[#f4f1ea] transition-transform duration-500 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6d8cff]"
+            className="group animate-[titleUp_1s_cubic-bezier(.87,0,.13,1)] bg-[#202020] text-[#f4f1ea] transition-transform duration-500 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6d8cff]"
             style={{ animationDelay: `${index * 80}ms` }}
             href={project.repoUrl}
             target="_blank"

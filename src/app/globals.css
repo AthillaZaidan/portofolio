@@ -23,24 +23,28 @@
 
 @keyframes titleUp {
   from {
-    opacity: 0;
     transform: translate3d(0, 108%, 0);
   }
   to {
-    opacity: 1;
     transform: translate3d(0, 0, 0);
   }
 }
 
-@keyframes rise {
+@keyframes titleMaskUp {
   from {
-    opacity: 0;
-    transform: translate3d(0, 24px, 0);
+    transform: translate3d(0, 108%, 0);
   }
   to {
-    opacity: 1;
     transform: translate3d(0, 0, 0);
   }
+}
+
+.mask-reveal {
+  animation: titleMaskUp 1s cubic-bezier(.87, 0, .13, 1) both;
+}
+
+.mask-reveal-slow {
+  animation: titleMaskUp 1.25s cubic-bezier(.87, 0, .13, 1) both;
 }
 
 @keyframes grain {

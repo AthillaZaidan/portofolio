@@ -8,7 +8,7 @@ export function ExperienceSection() {
       <div className="space-y-3">
         {featuredExperience.map((entry, index) => (
           <article
-            className="grid animate-[rise_.9s_cubic-bezier(.16,1,.3,1)_both] grid-cols-12 gap-x-3 gap-y-6 bg-[#ebe6dc] p-5 md:p-7"
+            className="grid animate-[titleUp_1s_cubic-bezier(.87,0,.13,1)] grid-cols-12 gap-x-3 gap-y-6 bg-[#ebe6dc] p-5 md:p-7"
             style={{ animationDelay: `${index * 90}ms` }}
             key={`${entry.company}-${entry.role}`}
           >

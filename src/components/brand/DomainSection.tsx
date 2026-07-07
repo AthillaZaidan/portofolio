@@ -8,7 +8,7 @@ export function DomainSection() {
       <div className="border-t border-[#171717]">
         {domains.map((domain, index) => (
           <article
-            className="grid animate-[rise_.9s_cubic-bezier(.16,1,.3,1)_both] grid-cols-12 gap-x-3 gap-y-5 border-b border-[#171717] py-6"
+            className="grid animate-[titleUp_1s_cubic-bezier(.87,0,.13,1)] grid-cols-12 gap-x-3 gap-y-5 border-b border-[#171717] py-6"
             style={{ animationDelay: `${index * 100}ms` }}
             key={domain.title}
           >
