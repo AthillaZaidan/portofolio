@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { BrandReveal } from "./BrandReveal";
 import { principles } from "./content";
 import { SectionHead } from "./SectionHead";
@@ -21,10 +22,21 @@ export function AboutSection() {
       </div>
       <div className="mt-16 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {principles.map((principle, index) => (
-          <BrandReveal delay={index * 0.09} key={principle}>
-            <article className="min-h-52 border border-[#d8d2c6] bg-[#ebe6dc] p-5">
-              <span className="font-mono text-xs text-[#174fff]">{String(index + 1).padStart(2, "0")}</span>
-              <p className="mt-12 text-2xl font-medium leading-[1.05] tracking-[-0.05em]">{principle}</p>
+          <BrandReveal delay={index * 0.09} key={principle.title}>
+            <article className="group relative min-h-[28rem] overflow-hidden bg-[#171717] text-[#f4f1ea]">
+              <Image
+                className="object-cover opacity-70 transition duration-700 group-hover:scale-[1.04] group-hover:opacity-55"
+                src={principle.image}
+                alt=""
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/18 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-5">
+                <span className="font-mono text-xs text-white/70">{String(index + 1).padStart(2, "0")}</span>
+                <h4 className="mt-8 text-3xl font-medium leading-[.98] tracking-[-0.055em]">{principle.title}</h4>
+                <p className="mt-4 text-sm leading-[1.6] text-white/78">{principle.text}</p>
+              </div>
             </article>
           </BrandReveal>
         ))}

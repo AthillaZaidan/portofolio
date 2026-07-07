@@ -29,10 +29,26 @@ export const domains = [
 ];
 
 export const principles = [
-  "Model behavior must explain itself.",
-  "Interfaces should expose real system state.",
-  "Shipping beats ornament, but craft still matters.",
-  "A portfolio should show evidence before adjectives.",
+  {
+    title: "Make intent observable.",
+    text: "I turn ambiguous product or model goals into screens, scores, logs, and workflows people can inspect.",
+    image: "/value/1.jpg",
+  },
+  {
+    title: "Give information a structure.",
+    text: "Good systems reduce noise: domain rules, data movement, and user decisions should have a clear shape.",
+    image: "/value/2.jpg",
+  },
+  {
+    title: "Keep craft and evidence together.",
+    text: "The interface has to feel considered, but the proof still comes from metrics, operations, and shipped behavior.",
+    image: "/value/3.jpg",
+  },
+  {
+    title: "Build for real interpretation.",
+    text: "AI output, admin state, and risk signals only matter when they help someone understand what to do next.",
+    image: "/value/4.jpg",
+  },
 ];
 
 export const featuredProjects = projects;
