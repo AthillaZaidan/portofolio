@@ -14,6 +14,16 @@ export const projects: Project[] = [
     image: "/projects/cognify.png",
   },
   {
+    id: "wave",
+    title: "WAVE",
+    role: "AI & Fullstack Engineer",
+    description:
+      "AI-assisted water pollution monitoring platform with citizen photo reports, Sentinel-2 anomaly detection, OpenStreetMap source attribution, and explainable zone-level risk scoring.",
+    techStack: ["Next.js", "React", "TypeScript", "Python", "FastAPI", "PostgreSQL"],
+    repoUrl: "https://github.com/AthillaZaidan/Wave",
+    image: "/projects/wave.png",
+  },
+  {
     id: "vokara",
     title: "Vokara",
     role: "AI & Backend Engineer",
@@ -24,6 +34,27 @@ export const projects: Project[] = [
     badge: "5th Place — Hackfest 2026",
     repoUrl: "https://github.com/AthillaZaidan/Vokara",
     image: "/projects/vokara.png",
+  },
+  {
+    id: "scresh",
+    title: "Scresh",
+    role: "Fullstack & AI Engineer",
+    description:
+      "Multi-tenant cooperative digitalization platform for member financing, governance audits, and AI-powered vegetable freshness scanning with grade, confidence, and shelf-life estimates.",
+    techStack: ["Next.js", "React", "TypeScript", "PostgreSQL", "FastAPI", "Bun"],
+    badge: "TechnoScape 2026 Final",
+    repoUrl: "https://github.com/AthillaZaidan/Scresh",
+    image: "/projects/scresh.png",
+  },
+  {
+    id: "virens",
+    title: "Virens",
+    role: "Fullstack & ML Engineer",
+    description:
+      "Nature-based carbon credit verification platform with project dossiers, satellite NDVI narration, anomaly tracking, verification scoring, and printable reports.",
+    techStack: ["Next.js", "TypeScript", "Tailwind", "Drizzle", "PostgreSQL", "Python"],
+    repoUrl: "https://github.com/AthillaZaidan/Virens",
+    image: "/projects/virens.png",
   },
   {
     id: "grandsummit",
@@ -54,6 +85,16 @@ export const projects: Project[] = [
     techStack: ["Go", "React", "TypeScript", "Tailwind", "Docker"],
     repoUrl: "https://github.com/AthillaZaidan/Mjolnir",
     image: "/projects/mjolnir.png",
+  },
+  {
+    id: "algorithmic-graph-theory",
+    title: "Graph Theory Visualizer",
+    role: "Algorithm & Systems Engineer",
+    description:
+      "Interactive graph theory visualizer with Next.js UI, 2D/3D graph views, C++ graph engine, TypeScript fallbacks, and demos for traversal, shortest path, MST, TSP, matching, and bandwidth algorithms.",
+    techStack: ["C++", "TypeScript", "Next.js", "Three.js", "D3", "Tailwind"],
+    repoUrl: "https://github.com/AthillaZaidan/Algorithmic-Graph-Theory",
+    image: "/projects/graph-theory.png",
   },
   {
     id: "malam-keos",

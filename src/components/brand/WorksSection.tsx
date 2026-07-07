@@ -7,10 +7,14 @@ import { SectionHead } from "./SectionHead";
 const imageSizes: Record<string, { width: number; height: number }> = {
   "/projects/cognify.png": { width: 1919, height: 1079 },
   "/projects/findmi.png": { width: 1919, height: 1079 },
+  "/projects/graph-theory.png": { width: 1919, height: 1079 },
   "/projects/grandsummit.png": { width: 1919, height: 1079 },
   "/projects/malamkeosini.png": { width: 1919, height: 1070 },
   "/projects/mjolnir.png": { width: 1919, height: 1079 },
+  "/projects/scresh.png": { width: 1920, height: 1079 },
+  "/projects/virens.png": { width: 1920, height: 1080 },
   "/projects/vokara.png": { width: 1919, height: 1079 },
+  "/projects/wave.png": { width: 1916, height: 1079 },
 };
 
 export function WorksSection() {

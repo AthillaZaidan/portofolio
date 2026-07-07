@@ -13,18 +13,18 @@ export const navItems = [
 export const domains = [
   {
     title: "Research and Applied AI",
-    text: "Anomaly detection, NLP classification, explainability, and model evaluation shipped as usable systems.",
-    proof: "Cognify, Vokara",
+    text: "Anomaly detection, NLP classification, environmental risk scoring, and verification workflows shipped as usable systems.",
+    proof: "Cognify, Vokara, WAVE, Virens",
   },
   {
     title: "Fullstack Systems",
-    text: "Registration, payments, dashboards, file workflows, QR operations, and admin tools for real events.",
-    proof: "FindMi, Grandsummit",
+    text: "Registration, payments, dashboards, file workflows, multi-tenant operations, and admin tools for real events.",
+    proof: "FindMi, Grandsummit, Scresh",
   },
   {
     title: "Low-Level Craft",
-    text: "Operating systems, algorithms, desktop apps, and backend foundations built close to the machine.",
-    proof: "Malam KeOS ini, Mjolnir",
+    text: "Operating systems, graph algorithms, desktop apps, and backend foundations built close to the machine.",
+    proof: "Malam KeOS ini, Mjolnir, Graph Theory",
   },
 ];
 
