@@ -12,7 +12,7 @@ export const navItems = [
 
 export const domains = [
   {
-    title: "Applied AI",
+    title: "Research and Applied AI",
     text: "Anomaly detection, NLP classification, explainability, and model evaluation shipped as usable systems.",
     proof: "Cognify, Vokara",
   },
