@@ -40,5 +40,5 @@ export const featuredProjects = projects;
 export const featuredExperience = experienceEntries;
 
 export const topSkills = skillClusters
-  .flatMap((cluster) => cluster.skills.map((skill) => skill.name))
+  .flatMap((cluster) => cluster.skills)
   .slice(0, 28);

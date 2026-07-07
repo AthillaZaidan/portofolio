@@ -1,6 +1,7 @@
 import { BrandReveal } from "./BrandReveal";
 import { domains, topSkills } from "./content";
 import { SectionHead } from "./SectionHead";
+import { TechStackCarousel } from "./TechStackCarousel";
 
 export function DomainSection() {
   return (
@@ -22,13 +23,7 @@ export function DomainSection() {
           </BrandReveal>
         ))}
       </div>
-      <div className="mt-8 flex flex-wrap gap-2" aria-label="Technical skills">
-        {topSkills.map((skill) => (
-          <span className="rounded-full border border-[#d5cec0] bg-[#fffaf0] px-3 py-1.5 font-mono text-xs text-[#4d4a43]" key={skill}>
-            {skill}
-          </span>
-        ))}
-      </div>
+      <TechStackCarousel skills={topSkills} />
     </section>
   );
 }

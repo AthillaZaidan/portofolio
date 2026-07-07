@@ -29,6 +29,23 @@
   80% { transform: translate(3%, 22%); }
 }
 
+@keyframes techMarquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.tech-marquee {
+  animation: techMarquee 36s linear infinite;
+}
+
+.tech-marquee:hover {
+  animation-play-state: paused;
+}
+
 .grain-overlay {
   position: fixed;
   inset: 0;
@@ -44,6 +61,10 @@
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .tech-marquee {
+    animation: none;
   }
 
   *,
