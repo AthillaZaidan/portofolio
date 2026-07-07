@@ -9,7 +9,7 @@ export function AboutSection() {
       <div className="grid grid-cols-12 gap-x-3 gap-y-10">
         <BrandReveal className="col-span-12 max-w-5xl md:col-span-7" slow>
           <h3 className="text-[13vw] font-medium leading-[.9] tracking-[-0.07em] md:text-[5.6vw]">
-            Engineering useful intelligence.
+            Proof-first systems, built to ship.
           </h3>
         </BrandReveal>
         <BrandReveal className="col-span-12 max-w-2xl md:col-span-4 md:col-start-9" delay={0.09}>
