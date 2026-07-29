@@ -1,4 +1,5 @@
 import { AboutSection } from "./AboutSection";
+import { AchievementSection } from "./AchievementSection";
 import { BrandNav } from "./BrandNav";
 import { ContactSection } from "./ContactSection";
 import { DomainSection } from "./DomainSection";
@@ -17,6 +18,7 @@ export function PortfolioBrandPage() {
       <DomainSection />
       <WorksSection />
       <ExperienceSection />
+      <AchievementSection />
       <ContactSection />
     </main>
   );

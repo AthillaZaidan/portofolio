@@ -13,7 +13,7 @@ export function BrandNav() {
       >
         AZ
       </a>
-      <div className="col-span-10 flex flex-wrap justify-end gap-x-3 gap-y-1.5 font-mono text-[0.72rem] leading-none text-[#555] sm:gap-x-5 sm:text-xs md:gap-x-8 md:text-sm [&_a]:min-h-5 [&_a]:transition-colors hover:[&_a]:text-[#171717]">
+      <div className="col-span-10 flex flex-wrap justify-end gap-x-3 gap-y-1.5 font-mono text-[0.72rem] leading-none text-[#555] sm:gap-x-5 sm:text-xs md:flex-nowrap md:gap-x-6 md:text-sm lg:gap-x-8 [&_a]:min-h-5 [&_a]:transition-colors hover:[&_a]:text-[#171717]">
         {navItems.map((item) => (
           <a href={item.href} key={item.href}>
             {item.label}
