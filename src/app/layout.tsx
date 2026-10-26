@@ -1,12 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { inter, azeretMono, bodoniModa } from "@/lib/fonts";
-import { SmoothScrollProvider } from "@/components/SmoothScrollProvider";
-import { GrainOverlay } from "@/components/GrainOverlay";
+import { albertSans } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Athilla Zaidan — Software and AI Engineer",
+    default: "Athilla Zaidan, Software and AI Engineer",
     template: "%s | Athilla Zaidan",
   },
   description:
@@ -46,7 +44,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL("https://athilla.tech"),
   openGraph: {
-    title: "Athilla Zaidan — Software and AI Engineer",
+    title: "Athilla Zaidan, Software and AI Engineer",
     description:
       "Portfolio of Athilla Zaidan, AI Engineer and Fullstack Developer. Building intelligent systems from models to deployment.",
     url: "https://athilla.tech",
@@ -56,7 +54,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Athilla Zaidan — AI Engineer & Fullstack Developer",
+    title: "Athilla Zaidan, Software and AI Engineer",
     description:
       "Portfolio of Athilla Zaidan, AI Engineer and Fullstack Developer. Building intelligent systems from models to deployment.",
     creator: "@athillazaidan",
@@ -76,7 +74,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#000000",
+  themeColor: "#0a0a0a",
 };
 
 export default function RootLayout({
@@ -85,14 +83,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${azeretMono.variable} ${bodoniModa.variable}`}>
+    <html lang="en" className={albertSans.variable} suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://skillicons.dev" />
-        <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-        <link rel="dns-prefetch" href="https://skillicons.dev" />
-        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
       </head>
-      <body className="font-sans antialiased bg-black">
+      <body className="font-sans antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -131,22 +126,14 @@ export default function RootLayout({
                   "@type": "WebSite",
                   "@id": "https://athilla.tech/#website",
                   url: "https://athilla.tech",
-                  name: "Athilla Zaidan — AI Engineer & Fullstack Developer",
+                  name: "Athilla Zaidan, Software and AI Engineer",
                   publisher: { "@id": "https://athilla.tech/#person" },
-                  potentialAction: {
-                    "@type": "SearchAction",
-                    target: {
-                      "@type": "EntryPoint",
-                      urlTemplate: "https://athilla.tech/?q={search_term_string}",
-                    },
-                    "query-input": "required name=search_term_string",
-                  },
                 },
                 {
                   "@type": "WebPage",
                   "@id": "https://athilla.tech/#webpage",
                   url: "https://athilla.tech",
-                  name: "Athilla Zaidan — AI Engineer & Fullstack Developer",
+                  name: "Athilla Zaidan, Software and AI Engineer",
                   isPartOf: { "@id": "https://athilla.tech/#website" },
                   about: { "@id": "https://athilla.tech/#person" },
                 },
@@ -154,10 +141,7 @@ export default function RootLayout({
             }),
           }}
         />
-        <SmoothScrollProvider>
-          {children}
-        </SmoothScrollProvider>
-        <GrainOverlay />
+        {children}
       </body>
     </html>
   );
